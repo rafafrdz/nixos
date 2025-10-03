@@ -92,6 +92,10 @@
     protobuf
     python311
     lldb
+    k3s_1_33
+    k9s
+    lazygit
+    lazydocker
 
     # Rust toolchain
     rustc
@@ -185,3 +189,4 @@
   # Mantén este valor en el de la primera instalación del sistema.
   system.stateVersion = "25.05";
 }
+
