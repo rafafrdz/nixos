@@ -40,6 +40,12 @@
     # networking.firewall.enable = false;
   };
 
+  # Kubernetes
+  networking.firewall = {
+            allowedTCPPorts = [ 6443 ];
+            allowedUDPPorts = [ 8472 ];
+  };
+
   ##############################################################################
   # Locale & Time
   ##############################################################################
@@ -96,6 +102,7 @@
     k9s
     lazygit
     lazydocker
+    kubectl
 
     # Rust toolchain
     rustc
@@ -170,6 +177,11 @@
       PermitRootLogin       = "yes";
       PasswordAuthentication = true;
     };
+  };
+  # Kubernetes
+  services.k3s = {
+    enable = true;
+    role = "server";
   };
 
   # Login automático en TTY
